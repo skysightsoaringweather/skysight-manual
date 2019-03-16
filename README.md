@@ -1,2 +1,3 @@
 # skysight-manual
-User Manual for SkySight
+
+Pull requests welcome, especially for updating or adding translations!
