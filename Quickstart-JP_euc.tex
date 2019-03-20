@@ -1,1 +1,218 @@
+\documentclass[9pt,a4paper,twocolumn]{article}
+\usepackage{fullpage, url, enumitem, parskip, eurosym}
+\usepackage[dvipdfmx]{graphicx}
 
+\newlist{tip}{itemize}{1}
+\setlist[tip,1]{
+  leftmargin=\dimexpr1.2cm+\labelsep\relax,
+  label={\smash{\raisebox{-0.6\height}{\includegraphics[width=1.5cm]{images/icons/tip.png}}}}
+}
+
+\newlist{arrow_red}{itemize}{1}
+\setlist[arrow_red,1]{
+  leftmargin=\dimexpr0.5cm+\labelsep\relax,
+  label={\smash{\raisebox{-0.3\height}{\includegraphics[width=0.5cm]{images/icons/arrow_red.png}}}}
+}
+
+\newlist{arrow_yellow}{itemize}{1}
+\setlist[arrow_yellow,1]{
+  leftmargin=\dimexpr0.5cm+\labelsep\relax,
+  label={\smash{\raisebox{-0.3\height}{\includegraphics[width=0.5cm]{images/icons/arrow_yellow.png}}}}
+}
+
+\newlist{arrow_blue}{itemize}{1}
+\setlist[arrow_blue,1]{
+  leftmargin=\dimexpr0.5cm+\labelsep\relax,
+  label={\smash{\raisebox{-0.3\height}{\includegraphics[width=0.5cm]{images/icons/arrow_blue.png}}}}
+}
+
+\newlist{arrow_green}{itemize}{1}
+\setlist[arrow_green,1]{
+  leftmargin=\dimexpr0.5cm+\labelsep\relax,
+  label={\smash{\raisebox{-0.3\height}{\includegraphics[width=0.5cm]{images/icons/arrow_green.png}}}}
+}
+
+\newlist{arrow_pink}{itemize}{1}
+\setlist[arrow_pink,1]{
+  leftmargin=\dimexpr0.5cm+\labelsep\relax,
+  label={\smash{\raisebox{-0.3\height}{\includegraphics[width=0.5cm]{images/icons/arrow_pink.png}}}}
+}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+\includegraphics[width=\linewidth]{images/logo.png}
+
+SkySight (https://skysight.io/) は、気象学者とグライダー世界チャンピオ
+ンのチームが開発しているインタラクティな気象予報ツールです。
+最新の気象モデリング技術と直感的なユーザインテーフェースの組み合わせで、
+高解像度の予報と強力なフライトプランニングツールを提供しています。
+世界の大部分をカバーしていて、年79\euro（マニュアル作成時点） でご利用頂けます。
+
+
+\subsection*{ローカルソアリング}
+SkySightを使えば、良い条件が出るかどうかを簡単に知ることができます。
+サーマル、ウェーブ、コンバージェンス、リッジの強弱が分かりやすく色で地図
+上に表示されます。
+
+\textbf{ポイント予報(Point Forecast)}を使うのが一番簡単で、
+これでサーマル、雲、主要な気象現象をまとめてチェックできます。
+
+気象条件が複雑だったり変化しているときは、局地的な気象現象の影響が
+ある場所では強くすぐ隣ではほとんどない、ということもあるので、
+滑空場周辺数カ所のポイント予報を見ることが大切です。
+
+\subsection*{タスクプランニング}
+サーマル、雲、オーバーデベロップ、風、空域、コンバー
+ジェンス、ウェーブなど、１日の中で刻々と変化する多くの要素を頭に入れて
+タスクプランニングするのは、とても複雑な作業です。
+
+SkySightは効率良いタスクを出来るだけ簡単に設定することを目指しています。
+
+使い方は簡単です
+\begin{enumerate}
+ \item　まず、\textbf{サーマルトップ高度(Height of Thermals)}と\textbf{サーマ
+      ル強度(Thermal Strength)}を1日をとおして見て、サーマルの始まりと終
+      りの時刻を判断します。そこから、タスクエリアを大まかにイメージします。
+\item 離陸時刻を仮定してタスクウィンドウを決めます。\textbf{XC予想距離
+      (Potential Flight Distance)}がその日飛べる最大タスク距離の目安にな
+      ります。
+\item  \textbf{雲底高度(Cu Cloudbase)}で、積雲が期待できるエリアを見ま
+       す。灰色は積雲発生がごく少ないか、不確実なエリアを示しています。
+\item \textbf{積雲厚み(Cu Depth)}を見ます. このパラメータはサーマルトッ
+      プと凝結高度の差で、正の値であれば積雲の出る条件、負の値であればブルーサー
+      マルを意味します。ゼロ近くの値なら、小さくまばらな積雲が予想されま
+      す。
+\item \textbf{境界層平均風(Boundary Layer Wind (Avg))} から平均風速と風
+      向を判断します。出来ることなら、タスクのレグを卓越風の方向に揃える
+      ことを検討します。
+\item \textbf{コンバージェンス(Convergence)}パラメータから、タスクエリア
+      の中に使えそうなコンバージェンスラインがあるかを見ます。赤からオレン
+      ジ色の長い線なら、理想的なコンバージェンスです。
+\item \textbf{雲量(Cloud Cover)}, \textbf{オーバーデベロップ
+      (Overdevelopment)}、\textbf{CAPE/雷雲(CAPE/Storms)} を見て、
+      フライトに影響しそうな気象現象がないかを確認します。
+\item \textbf{衛星画像(Satellite View)} で実際の天気が予報と一致して
+      いるかどうかを確認して、違っていたらそれに応じてタスクを修正します。
+      \textbf{Forecast Satellite View}パラメータを使うと、
+      予報と実際の突き合わせが簡単にできます。
+ \item ここまでの情報を良く見返します。その上で、条件の良いエリアをつな
+       いで\textbf{経路予報(Route Forecast)}にタスクに入力します。
+\item タスクエリアの複数の地点の気象条件を\textbf{ポイント表示ツール
+      (Point Tools)}で確認して、1日の天気の変化を正しく理解しているかど
+      うかを確認します。
+ \item パワーユーザの方は\textbf{ポイント エマグラム予報(Point SkewT)}と
+       \textbf{Windgram Tool}でより突っ込んだ解析ができます。
+ \item 後は飛ぶだけです! 飛んだ後には\textbf{IGC Upload}でフライ
+       トの解析ができます。
+\end{enumerate}
+
+\subsection*{SkySightのインタラクティツール}
+SkySightは様々なインタラクティブツールを実装しています。
+使い方は簡単で
+\begin{enumerate}
+\item サイドメニューで使いたいツールを選択
+\item 地図上の点を選択して、その地点での予報を表示
+\item 経路予報やウェーブ断面図の場合は、地図をもう一箇所クリックしてタスクや断
+      面を定義
+\item 必要に応じて画面上部のスライダーで時刻を変更
+\item \includegraphics[height=12pt]{images/icons/exit.png}印クリックで開
+      いた予報画面を閉じる
+\end{enumerate}
+
+\subsubsection*{\includegraphics[height=15pt]{images/icons/skew-t.png}
+   ポイント エマグラム予報(Point Skew-T)}
+Skew-T log-Pダイアグラムからは、対流層や上層大気の状態、雷雲発生の可能性、風
+を予測します。地図上のすべての地点で、理解しやすいダイアグラムが表示されます。
+
+\includegraphics[width=\linewidth]{images/skew-t.png}
+
+\begin{arrow_red}
+\item \textbf{気温(Temperature Curve)} 各高度での気温の予測値
+\end{arrow_red}
+\begin{arrow_green}
+\item \textbf{露点温度(Dewpoint Curve)} 各高度での露点温度の予測値
+\end{arrow_green}
+\begin{arrow_blue}
+\item \textbf{風速(Wind Strength)} 各高度での風速の予測値と風向風速記号
+\end{arrow_blue}
+\begin{arrow_pink}
+\item \textbf{仮想気塊(Virtual Parcel)} 境界層中を上昇する仮想的な熱気塊
+ の温度変化。雷雲の発生や強さの予測に使う
+\end{arrow_pink}
+
+\subsubsection*{\includegraphics[height=15pt]{images/icons/point_forecast.png}
+   ポイント予報(Point Forecast)}
+ポイント予報(Point Forecast)では、１日の条件変化が一目でわかります。
+雲の広がり、サーマルの発達や気温の変化が数値と可視化グラ
+フの両方で表示されます。
+
+\includegraphics[width=\linewidth]{images/point_forecast.png}
+
+上3列の色は各高度での雲の広がりです。青色は雲のない状態で、白が薄い
+雲、灰色は厚い雲を示しています。
+
+積雲厚さは、高度グラフの凝結高度より上の灰色の領域です。灰色の領域がない
+場合は、ブルーサーマルを意味します。
+
+\subsubsection*{\includegraphics[height=15pt]{images/icons/windgram.png}
+   Point Windgram}
+   Windgramでは、任意の場所での各高度の気温低減率、気温、相対湿度、風の
+   1日の変化を表示します。
+逆転層、湿域、ウィンドシアを一目で可視化できます。
+
+\includegraphics[width=\linewidth]{images/windgram_lapse_annot.png}
+
+上は条件の良い日に典型的な低減率の図です。逆転層
+(\includegraphics[height=11pt]{images/icons/arrow_red.png})が上昇すると
+ともに対流層
+(\includegraphics[height=11pt]{images/icons/arrow_yellow.png})が深くなっ
+ている様子がわかります。
+
+\subsubsection*{\includegraphics[height=15pt]{images/icons/route.png} 経
+   路予報(Route Forecast)}
+   経路予報では、平均速度を予測するとともに、設定したタスク経路上の気象条件
+   をまとめて表示することができます。
+   右側の表はスタート時刻毎の予想平均速度で、Inf.はタスクコンプリートが不
+   可能なことを意味します。
+
+   経路予報(Route Forecast)は、タスクプランニングや競技ではとても便利なツールになります。
+
+   複雑な気象条件の時に、平均速度の出る良いタスクを見つけるためには、
+   条件の悪いエリアをうまく避けるように、タスクポイントを動かしてあげるこ
+   とが必要です。
+
+   \includegraphics[width=\linewidth]{images/route.png}
+   
+\subsubsection*{\includegraphics[height=15pt]{images/icons/wave.png} ウェ
+   ーブ断面図(Wave Cross-Section)}
+
+   ウェーブ断面図(Wave Cross-Section)では、各高度のウェーブ特性を可視
+   化できます。
+   地図上に設定した2地点間のウェーブの断面図が、縦軸を高度、横軸を2地点
+   間の距離として、鉛直方向速度が色で表示されます。
+
+   パラメータリストで鉛直速度(Vertial Velocity)プロットを選択して、その
+   プロットに表れたウェーブに対して垂直に、断面表示する直線を設定して下さい。
+   
+   \includegraphics[width=\linewidth]{images/wave_x-section.png}
+
+   上の図は、紀伊山地で発生したウェーブの断面図です。1,2,3で示した領域がそれぞ
+   れ第一波、第二波、第三波で、赤と紫が上昇帯、青が下降帯を示しています。
+
+\subsubsection*{\includegraphics[height=15pt]{images/icons/igc.png} IGC Upload}
+SkySightはフライト後の解析ツールにもなります。
+フライト中に観察した気象現象が実際には何であったのかを確かめて、
+それらがSkySightの予報ではどう発生してどう表現されているのかを理解する上
+で、とても役にたちます。
+
+\includegraphics[width=\linewidth]{images/igc_upload.png}
+
+\subsection*{SkySightの使い方}
+デスクトップPCとモバイル機器、どちらでもSkySightをお使い頂けます。1週間
+の無料お試しアカウト、正式アカウント、どちらも \url{http://skysight.io} から登録できます
+
+
+\end{document}
