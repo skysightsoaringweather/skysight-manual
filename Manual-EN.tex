@@ -48,7 +48,7 @@
 
 \title{\includegraphics[width=12cm]{images/logo.png}\\[1cm]SkySight 101: \\[0.5cm]A Glider Pilot's Beginner Guide}
 \author{\\Matthew Scutter, Jon Pring, Sophie Curio}
-\date{Updated: February 2024}
+\date{Updated: October 2024}
 
 
 \begin{document}
@@ -218,6 +218,12 @@ Recent satellite imagery can be toggled using \includegraphics[height=15pt]{imag
 % \includegraphics[width=12cm]{images/webcam.png}
 % \end{center}
 
+\subsubsection{Cu Overview}\label{subsec:cu_overview}
+The Cu Overview provides a visualisation of the distribution of cumulus clouds, overdevelopment and cloud cover. Higher density of dots indicates increasingly thick and overdeveloped cumulus. Grey coverage is mid-to-high level cloud coverage. Soft background colour is height of dry thermals. 
+\begin{center}
+\includegraphics[width=15cm]{images/cu_overview.png}
+\end{center}
+
 \subsubsection{Significant Weather}\label{subsec:sigweather}
 The Significant Weather function will give an overview of the weather in the task area. By displaying various icons, it will display weather events, such as clouds, rain, wind or storms.
 \begin{itemize}
@@ -293,19 +299,35 @@ The cloud cover is visualised in the top rows with a colour gradient. Blue repre
 Cumulus depth is represented on the convective graph with a dark grey shaded area above the condensation line. Where there is no dark grey shading, this suggests blue thermals.
 
 \subsection{Point Windgram}
-The windgram shows the development in the lapse rate, temperature, relative humidity and wind throughout the day and with height at a point. This feature is useful to visualise inversion levels, moisture layers and wind shear.
+The windgram shows the development in the thermal strength, lapse rate, temperature, relative humidity, wind speed and cloud cover throughout the day and with height at a point. This feature is useful to visualise inversion levels, moisture layers and wind shear.
 \begin{center}
+\begin{minipage}{\textwidth}
+\centering
+\textbf{Overview}
+
+\includegraphics[width=10cm]{images/windgram_overview.png}
+\end{minipage}
+
+\begin{minipage}{0.45\textwidth}
+\centering
+\textbf{Lapse Rate}
+
 \includegraphics[width=6cm]{images/windgram_lapse.png}
-\includegraphics[width=6cm]{images/windgram_temp.png}\\
-\includegraphics[width=6cm]{images/windgram_humid.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\centering
+\textbf{Wind}
+
 \includegraphics[width=6cm]{images/windgram_wind.png}
+\end{minipage}
 \end{center}
 
 To use the windgram:
 \begin{enumerate}
 \item Select the \includegraphics[height=15pt]{images/icons/windgram.png} Windgram icon from the selection bar, so that it is highlighted blue.
 \item Click on the map to select the desired point for the forecast.
-\item Use the top drop down menu to change the parameter. Four different parameters are available including Lapse Rate, Temperature, Relative Humidity and Wind Speed.
+\item Use the top drop down menu to change the parameter. Six different parameters are available including Overview, Thermal Strenght, Lapse Rate, Temperature, Relative Humidity, Wind Speed and Cloud Cover.
 \item The wind barbs can be shown or hidden using the check box next to the drop down menu.
 \item Close the windgram by clicking on the \includegraphics[height=11pt]{images/icons/exit.png}.
 \end{enumerate}
@@ -421,8 +443,8 @@ SkySight has a lot of useful weather information available, however interpreting
 \item Determine the start of thermals. Do this by checking the thermal heights and strengths throughout the morning. Once the thermal heights and strengths are sufficient, judge this as the beginning of the day.
 \item Determine the end of thermals. Use the same method as above to determine the end of the day, and therefore the length of the soaring window.
 \item Check the potential flight distance. Look at this parameter over the planned task areas in combination with the soaring window worked out in (2), to calculate the required task speeds.
-\item Check the Cu Cloudbase throughout the day to see how convection develops. Note that positive values indicate cumulus.
-\item Check the Cloud Cover  parameters to look for low, mid and high level cloud development and movement, which may affect thermal strengths.
+\item Check the Cu Cloudbase or Cu Overview parameters throughout the day to see how convection develops. Note that positive values indicate cumulus.
+\item Check the Cloud Cover or Cu Overview parameters to look for low, mid and high level cloud development and movement, which may affect thermal strengths.
 \item Check the wind parameters, which may be an indication of streeting, wave, or convergence.
 \item Having looked at all these forecasting parameters, use the route forecasting tool to plot a proposed route. The route forecast will give an estimated task speed based on different start times, and display an overview of the conditions over the task.
 \item The final `gotcha' parameters to check include CAPE for storms potential, overdevelopment and rain.
@@ -552,12 +574,14 @@ Height above ground at which thermals fall below 175 fpm.
 \subsubsection{Significant weather}
 Significant weather overlaid on depth of thermals.
 \subsection{Cloud}
+\subsubsection{Cu Overview}
+Overview of distribution of cumulus clouds, cloud coverage and height of thermals.
 \subsubsection{Cu Depth}
 Difference between the top of predicted thermals and the condensation layer, increasingly positive values indicating more likely cumulus, negative values indicating unlikely cumulus.
 \subsubsection{Cu Cloudbase}
 In areas where cumulus is expected to form, the height of that cumulus above sea level. Grey indicates possible cloud.
-\subsubsection{Overdevelopment}
-Shows areas likely to overdevelop, as a percentage of 2000ft depth of overdevelopment. 0-40 indicates mild, 40-65 indicates substantial and 65+ may be unsoarable.
+\subsubsection{Cu Coverage}
+Percentage of sky coverage with Cumulus clouds. Higher coverage (or 'oktas') indicates increasingly thick and overdeveloped cumulus. Greater than 75% may be unsoarable. 30% is ideal.
 \subsubsection{Cloud Cover}
 Cloud cover forecast, divided into Low (0-4000m), Medium (4000-8000m) and High (8000m+).
 \subsubsection{CAPE / Storms}
